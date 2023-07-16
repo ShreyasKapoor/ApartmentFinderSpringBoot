@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    password: password
+    url: jdbc:mysql://localhost:3306/ApartmentFinder?serverTimezone=UTC&useSSL=false
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  security:
+    oauth2:
+      client:
+        registration:
+         google:
+          client-id: 875825700999-dn8drhmcmtoiqqf8qgeou5ul9csdaeec.apps.googleusercontent.com
+          client-secret: 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
+
+          scope:
+           - email
+           - profile

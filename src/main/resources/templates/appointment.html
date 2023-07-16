@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: html_head(pageTitle='Book Appointment')" />
+
+<body>
+	<div th:replace="fragments :: header"></div>
+	<div align="center">
+		<div class="text-center">
+			<h1>Apartment Finder - Book Appointment</h1>
+			<p />
+
+			<h4 th:text="${apartment.name}"></h4>
+			<h4 th:text="${apartment.address}"></h4>
+			<br>
+
+			<form action="#" th:action="@{'/bookAppointment/' + ${apartment.apartmentid} + '/' + ${userid}}"
+				th:object="${appointment}" method="post">
+				<table border="0" cellpadding="10">
+					<tr>
+						<div class="col-md-7">
+							Date: <input type="date" th:field="*{appointmentdate}" placeholder="MM/DD/YYYY" />
+						</div>
+					</tr>
+					<tr>
+						<div class="col-md-7">
+							Time: <select th:field="*{appointmenttime}">
+								<option value="0"> Select Option</option>
+								<option th:each="option : ${appointmentTimeOptions}" th:value="${option}"
+									th:text="${option}"></option>
+							</select>
+						</div>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><button type="submit" class="btn btn-primary">Book</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+
+		</div>
+
+</body>
+
+</html>

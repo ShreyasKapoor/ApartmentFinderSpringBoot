@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Edit User Profile')" />
+<body>
+	<div th:replace="fragments :: header"></div>
+	<div align="center">	
+		<h1>Edit Profile</h1>
+		<br/>
+		<form action="#" th:action="@{'/update/' + ${userid}}" th:object="${user}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Password:</td>
+					<td><input type="text" th:field="*{password}" class="form-control" /></td>
+				</tr>				
+				<tr>
+					<td>Email Address</td>
+					<td><input type="text" th:field="*{emailaddress}" class="form-control" /></td>
+				</tr>				
+				<tr>
+					<td>Contact No</td>
+					<td><input type="text" th:field="*{contactno}" class="form-control" /></td>
+				</tr>				
+				<tr>
+					<td colspan="2" align="center"><button type="submit" class="btn btn-primary">Update</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

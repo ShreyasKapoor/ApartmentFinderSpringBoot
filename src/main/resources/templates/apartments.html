@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: html_head(pageTitle='All Apartments')" />
+
+<body>
+	<div class="container">
+		<div th:replace="fragments :: header"></div>
+
+		<div class="text-center">
+			<h1>Apartment Finder - All Apartments</h1>
+			<p />
+			<h4><a th:href="@{'/edit/' + ${userid}}">Edit Profile</a></h4>
+			<p />
+			<h4><a th:href="@{'/manage/' + ${userid}}">Manage Appointments</a></h4>
+			<p />
+		</div>
+
+		<table class="table table-striped table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th>Name</th>
+					<th>Rent</th>
+					<th>Bedroom</th>
+					<th>Bathroom</th>
+					<th>Address</th>
+					<th>Area</th>
+					<th>Images</th>
+					<th>Rating</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="apartment : ${apartmentList}">
+					<td th:text="${apartment.name}">Apartment Name</td>
+					<td th:text="${apartment.rent}">Rent</td>
+					<td th:text="${apartment.bedroom}">Bedrooms</td>
+					<td th:text="${apartment.bathroom}">Bathrooms</td>
+					<td th:text="${apartment.address}">Address</td>
+					<td th:text="${apartment.area}">Area</td>
+					<td><img th:src="${apartment.images}" height="300px"></td>
+					<td th:text="${apartment.rating} "></td>
+
+					<td>
+						<a th:href="@{'/book/' + ${apartment.apartmentid}+'/' + ${userid}}">Book Appointment</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div><br /><br /></div>
+	</div>
+</body>
+
+</html>
