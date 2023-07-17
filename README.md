@@ -5,12 +5,14 @@ The database contains information about apartments. The user can log in using th
 
 From here, they can Edit their profile, or Book an appointment to visit the apartment. They can also manage the appointments by canceling them.
 
-## Technologies Used
+## Technologies and Tools Used
 
 - Java 1.8
 - Spring Boot (Security, Thymeleaf, JPA, OAuth, web)
 - Tomcat 9
 - HTML and CSS
+- MySQL
+- Spring Tool Suite 4
 
 
 ## How to Run
