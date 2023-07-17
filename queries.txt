@@ -1,0 +1,55 @@
+create database ApartmentFinder;
+
+use ApartmentFinder;
+
+
+CREATE TABLE `users` (
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
+  `emailaddress` varchar(100) DEFAULT NULL,
+  `contactno` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userId`),
+UNIQUE (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `Apartment` (
+  `apartmentid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `rent` varchar(100) DEFAULT NULL,
+  `bedroom` varchar(100) NOT NULL,
+  `bathroom` varchar(100) DEFAULT NULL,
+  `area` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `images` varchar(1000) DEFAULT NULL,
+  `rating` double(2,1) DEFAULT 0.0,
+  `noofreviews` int(11) DEFAULT 0,
+  PRIMARY KEY (`apartmentid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO Apartment VALUES(1, "apartment1", "$1500/mo", "1", "1", "1000sqft", "addressno1", "https://ap.rdcpix.com/0e781dc4137bebca29fa5064cd529133l-m109581160s-w932_h420_q75.jpg", 0.0,0);
+
+
+CREATE TABLE `Appointment` (
+  `appointmentid` int(11) NOT NULL AUTO_INCREMENT,
+  `apartmentid` varchar(100) NOT NULL,
+  `userid` varchar(100) DEFAULT NULL,
+  `appointmentdate` varchar(100) NOT NULL,
+  `appointmenttime` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`appointmentid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+
+
+
